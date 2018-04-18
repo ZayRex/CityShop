@@ -6,8 +6,8 @@
 package shoplog;
 
 /**
- *
- * @author 30213076
+ * Date 17/04/2018
+ * @author Mohamad Harah
  */
 public class User {
     private String userName;

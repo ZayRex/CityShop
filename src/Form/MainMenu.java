@@ -5,9 +5,11 @@
  */
 package Form;
 
+import shoplog.Customer;
+
 /**
- *
- * @author 30213076
+ * Date 17/04/2018
+ * @author Mohamad Harah
  */
 public class MainMenu extends javax.swing.JFrame {
 
@@ -47,8 +49,18 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         jButton2.setText("Staff Login");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("View Products");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -107,7 +119,27 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        CustomerLogin rForm = new CustomerLogin();
+        this.dispose();
+        rForm.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+            Customer unregisteredCustomer = new Customer();
+        unregisteredCustomer.setIsRegistered(false);
+        
+        ViewProducts rForm = new ViewProducts(unregisteredCustomer);
+        this.dispose();
+        rForm.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        StaffLogin rForm = new StaffLogin();
+        this.dispose();
+        rForm.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

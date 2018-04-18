@@ -5,17 +5,24 @@
  */
 package Form;
 
+import shoplog.Customer;
+import shoplog.DBHandler;
+
 /**
- *
- * @author 30213076
+ * Date 17/04/2018
+ * @author Mohamad Harah
  */
 public class CustomerHome extends javax.swing.JFrame {
-
+private Customer loggedInCustomer;
     /**
      * Creates new form CustomerHome
      */
-    public CustomerHome() {
+    public CustomerHome(Customer c) {
         initComponents();
+       loggedInCustomer=c;
+       
+        
+        
     }
 
     /**
@@ -29,23 +36,44 @@ public class CustomerHome extends javax.swing.JFrame {
 
         lblCustomerGreeting = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnBrowserProducts = new javax.swing.JButton();
+        btnViewOrders = new javax.swing.JButton();
+        btnEditDetails = new javax.swing.JButton();
+        btnUnregister = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
+        lblMessage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton2.setText("Browse Products");
+        btnBrowserProducts.setText("Browse Products");
+        btnBrowserProducts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBrowserProductsActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("View My Order");
+        btnViewOrders.setText("View My Order");
+        btnViewOrders.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewOrdersActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Edit Details");
+        btnEditDetails.setText("Edit Details");
+        btnEditDetails.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditDetailsActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Unregister From Shop");
+        btnUnregister.setText("Unregister From Shop");
+        btnUnregister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnUnregisterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -54,32 +82,34 @@ public class CustomerHome extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(89, 89, 89)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBrowserProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEditDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUnregister, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnViewOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(88, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton2)
+                .addComponent(btnBrowserProducts)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(btnViewOrders)
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(btnEditDetails)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                .addComponent(jButton5)
+                .addComponent(btnUnregister)
                 .addContainerGap())
         );
 
-        jButton1.setText("Log Out");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setText("Log Out");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
+
+        lblMessage.setText("..");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -91,31 +121,69 @@ public class CustomerHome extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblMessage)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblCustomerGreeting, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(96, 96, 96))
             .addGroup(layout.createSequentialGroup()
                 .addGap(152, 152, 152)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addComponent(lblCustomerGreeting, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblCustomerGreeting, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMessage))
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(btnLogout)
                 .addGap(24, 24, 24))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        MainMenu mainMenu = new MainMenu();
+        this.dispose();
+        mainMenu.setVisible(true);
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void btnBrowserProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowserProductsActionPerformed
+        // TODO add your handling code here:
+        ViewProducts rForm = new ViewProducts(loggedInCustomer);
+        this.dispose();
+        rForm.setVisible(true);
+    }//GEN-LAST:event_btnBrowserProductsActionPerformed
+
+    private void btnEditDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDetailsActionPerformed
+        // TODO add your handling code here:
+        EditCustomerDetails rForm = new EditCustomerDetails(loggedInCustomer);
+        this.dispose();
+        rForm.setVisible(true);
+    }//GEN-LAST:event_btnEditDetailsActionPerformed
+
+    private void btnViewOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrdersActionPerformed
+        // TODO add your handling code here:
+        CustomerViewOrders viewO = new CustomerViewOrders(loggedInCustomer);
+        this.dispose();
+        viewO.setVisible(true);
+    }//GEN-LAST:event_btnViewOrdersActionPerformed
+
+    private void btnUnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnregisterActionPerformed
+        // TODO add your handling code here:
+        DBHandler db = new DBHandler();
+        db.deleteCustomer(loggedInCustomer);
+        
+        MainMenu mainMenu = new MainMenu();
+        this.dispose();
+        mainMenu.setVisible(true);
+    }//GEN-LAST:event_btnUnregisterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,18 +215,19 @@ public class CustomerHome extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CustomerHome().setVisible(true);
+                //new CustomerHome().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton btnBrowserProducts;
+    private javax.swing.JButton btnEditDetails;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnUnregister;
+    private javax.swing.JButton btnViewOrders;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblCustomerGreeting;
+    private javax.swing.JLabel lblMessage;
     // End of variables declaration//GEN-END:variables
 }

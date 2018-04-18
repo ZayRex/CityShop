@@ -6,21 +6,39 @@
 package shoplog;
 
 /**
- *
- * @author 30213076
+ * Date 17/04/2018
+ * @author Mohamad Harah
  */
 public class OrderLine {
     private int OrderLineId;
     private int Quantity;
     private double LineTotal;
+    private Product product;
 
-    public OrderLine() {
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
-    public OrderLine(int OrderLineId, int Quantity, double LineTotal) {
+    public Product getProduct() {
+        return product;
+    }
+
+    public OrderLine() {
+        
+    }
+
+    public OrderLine(int OrderLineId, int Quantity, double LineTotal, Product product) {
         this.OrderLineId = OrderLineId;
         this.Quantity = Quantity;
         this.LineTotal = LineTotal;
+        this.product = product;
+    }
+    public OrderLine(Order orderIn, Product productIn, int Quantity)
+    {
+        OrderLineId = orderIn.generateUniqueOrderLineId();
+        product = productIn;
+        this.Quantity = Quantity;
+        LineTotal = productIn.getPrice() * Quantity;
     }
 
     public int getOrderLineId() {
@@ -46,6 +64,7 @@ public class OrderLine {
     public void setLineTotal(double LineTotal) {
         this.LineTotal = LineTotal;
     }
+    
     
     
     

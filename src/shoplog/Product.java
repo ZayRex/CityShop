@@ -6,8 +6,8 @@
 package shoplog;
 
 /**
- *
- * @author 30213076
+ * Date 17/04/2018
+ * @author Mohamad Harah
  */
 public class Product {
     private int productId;
@@ -20,6 +20,12 @@ public class Product {
 
     public Product(int productId, String productName, double price, int StockLevel) {
         this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+        this.StockLevel = StockLevel;
+    }
+    public Product( String productName, double price, int StockLevel) {
+        
         this.productName = productName;
         this.price = price;
         this.StockLevel = StockLevel;
@@ -59,7 +65,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "productId=" + productId + ", productName=" + productName + ", price=" + price + ", StockLevel=" + StockLevel + '}';
+        return  productName ;
     }
     
     
