@@ -219,6 +219,9 @@ public class ViewBasket extends javax.swing.JFrame {
         loggedInCustomer.findLatestOrder().setStatus("Complete");
         db.completeOrder(orderId);
         JOptionPane.showMessageDialog(null,"Order Completed!");
+        CustomerHome ch = new CustomerHome(loggedInCustomer);
+        this.dispose();
+        ch.setVisible(true);
         //System.out.println("order complete");
         } catch (SQLException ex) {
             Logger.getLogger(ViewBasket.class.getName()).log(Level.SEVERE, null, ex);
