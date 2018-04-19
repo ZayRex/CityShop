@@ -21,6 +21,7 @@ public class AddProduct extends javax.swing.JFrame {
 
     /**
      * Creates new form AddProduct
+     * @param staff
      */
     public AddProduct(Staff staff) {
         loggedInStaff = staff;
@@ -232,7 +233,10 @@ public class AddProduct extends javax.swing.JFrame {
         txtAdditional.setVisible(true);
         lblMessage.setText("");
     }//GEN-LAST:event_rdnFootwearActionPerformed
-
+/**
+ * returns to the previous page
+ * @param evt 
+ */
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         StaffViewProduct rForm = new StaffViewProduct(loggedInStaff);
@@ -253,7 +257,10 @@ public class AddProduct extends javax.swing.JFrame {
         txtAdditional.setVisible(true);
         lblMessage.setText("");
     }//GEN-LAST:event_rdnClothingActionPerformed
-
+/**
+ * clears the all the fields
+ * @param evt 
+ */
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         txtProductName.setText("");
@@ -266,7 +273,10 @@ public class AddProduct extends javax.swing.JFrame {
         lblAdditional.setVisible(false);
         lblMessage.setText("");
     }//GEN-LAST:event_btnClearActionPerformed
-
+/**
+ * takes the information in fields to add to database
+ * @param evt 
+ */
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         if(!txtProductName.getText().isEmpty() && !txtProductPrice.getText().isEmpty() && 

@@ -10,6 +10,9 @@ package shoplog;
  * @author Mohamad Harah
  */
 public class Product {
+    /**
+     * Product object class with attributes setters, getters, empty and loaded constructors
+     */
     private int productId;
     private String productName;
     private double price;

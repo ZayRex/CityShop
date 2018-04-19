@@ -232,7 +232,10 @@ public class ViewProducts extends javax.swing.JFrame {
     private void cmbQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbQuantityActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbQuantityActionPerformed
-
+/**
+ * returns to customer home page
+ * @param evt 
+ */
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         if(loggedInCustomer.getIsRegistered())
@@ -248,7 +251,10 @@ public class ViewProducts extends javax.swing.JFrame {
            rForm.setVisible(true);
         }
     }//GEN-LAST:event_btnBackActionPerformed
-
+/**
+ * list the products available in the selected category
+ * @param evt 
+ */
     private void lstProductValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstProductValueChanged
         // TODO add your handling code here:
     //   String productValue = (String) lstProduct.getSelectedValue();
@@ -296,7 +302,10 @@ public class ViewProducts extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_lstProductValueChanged
-
+/**
+ * adds selected product to basket
+ * @param evt 
+ */
     private void btnAddtoBasketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddtoBasketActionPerformed
        if(lstProduct.getSelectedIndex() != -1)
         {           
@@ -349,7 +358,10 @@ public class ViewProducts extends javax.swing.JFrame {
             lblMessage.setText("Please first select a product");
         }
     }//GEN-LAST:event_btnAddtoBasketActionPerformed
-
+/**
+ * list the categories available in shop
+ * @param evt 
+ */
     private void lstCategValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstCategValueChanged
         // TODO add your handling code here:
         DefaultListModel model = new DefaultListModel();
@@ -369,7 +381,10 @@ public class ViewProducts extends javax.swing.JFrame {
         lstProduct.setModel(model);
         cmbQuantity.removeAllItems();
     }//GEN-LAST:event_lstCategValueChanged
-
+/**
+ * goes to the basket
+ * @param evt 
+ */
     private void btnViewOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrdersActionPerformed
         try {
             // TODO add your handling code here:

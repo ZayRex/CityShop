@@ -16,6 +16,9 @@ import java.util.Map;
  * @author Mohamad Harah
  */
 public class Order {
+    /**
+     * Order object class with attributes setters, getters, empty and loaded constructors
+     */
     private int orderId;
     private Date orderDate;
     private double orderTotal;
@@ -62,6 +65,11 @@ public class Order {
         }
         return orderLineId;
     }
+    /**
+     * gets the quantity of products in one order line
+     * @param productId
+     * @return the quantity of products
+     */
     public int getQuantityofProduct(int productId)
     {
         //loop through hashmap
@@ -74,6 +82,11 @@ public class Order {
         }
         return -1;
     }
+    /**
+     * adds new line to the order (in the basket)
+     * @param oL
+     * @throws SQLException 
+     */
     public void addOrderLine(OrderLine oL) throws SQLException 
     {
         orderLines.put(oL.getOrderLineId(), oL);
@@ -81,6 +94,11 @@ public class Order {
         db.addOrderLine(oL,orderId);
         orderTotal = orderTotal + oL.getLineTotal();
     }
+    /**
+     * removes a line from the order (in basket)
+     * @param productId
+     * @throws SQLException 
+     */
      public void removeOrderLine(int productId) throws SQLException
     {
         Iterator<Map.Entry<Integer, OrderLine>> iter = orderLines.entrySet().iterator();

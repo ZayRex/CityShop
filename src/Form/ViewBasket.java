@@ -27,7 +27,7 @@ public class ViewBasket extends javax.swing.JFrame {
     private int orderId;
 
     /**
-     * Creates new form ViewBasket
+     * Creates table contains the products added to basket
      */
     public ViewBasket(Customer c) throws SQLException {
         loggedInCustomer = c;
@@ -171,7 +171,10 @@ public class ViewBasket extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-  
+  /**
+   * removes selected item from the basket
+   * @param evt 
+   */
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
         if(tblOrderLines.getSelectedRow() == -1)
         {
@@ -196,13 +199,19 @@ public class ViewBasket extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRemoveActionPerformed
 
-    
+  /**
+   * returns to view products page
+   * @param evt 
+   */  
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         ViewProducts vP = new ViewProducts(loggedInCustomer);
         this.dispose();
         vP.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
-
+/**
+ * submits the products in the table as an order and goes to confirmation dialog
+ * @param evt 
+ */
     private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
         DBHandler db = new DBHandler();
         

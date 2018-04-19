@@ -10,6 +10,9 @@ package shoplog;
  * @author Mohamad Harah
  */
 public class User {
+    /**
+     * User object class with attributes setters, getters, empty and loaded constructors
+     */
     private String userName;
     private String password;
     private String firstName;

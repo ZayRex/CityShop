@@ -10,7 +10,9 @@ package shoplog;
  * @author Mohamad Harah
  */
 public class FootWear extends Product {
-    
+    /**
+     * FootWear object class with attributes setters, getters, empty and loaded constructors
+     */
     private int size;
 
     public FootWear() {

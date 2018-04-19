@@ -25,7 +25,7 @@ public class StaffViewOrders extends javax.swing.JFrame {
     private HashMap<String, Customer> customers;
 
     /**
-     * Creates new form AdminOrders
+     * Creates new orders form for staff
      */
     public StaffViewOrders(Staff staff) throws SQLException {
         LoggedInStaff = staff;
@@ -130,13 +130,19 @@ public class StaffViewOrders extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * back to staff home page
+ * @param evt 
+ */
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         StaffHome stfHome = new StaffHome(LoggedInStaff);
         this.dispose();
         stfHome.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
-
+/**
+ * view selected order details
+ * @param evt 
+ */
     private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
         if(tblOrders.getSelectedRow() == -1)
         {

@@ -11,7 +11,9 @@ package shoplog;
  * @author Mohamad Harah
  */
 public class Staff extends User {
-    
+    /**
+     * Staff object class with attributes setters, getters, empty and loaded constructors
+     */
     private double salary;
     private String position;
 

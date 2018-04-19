@@ -10,7 +10,9 @@ package shoplog;
  * @author Mohamad Harah
  */
 public class Clothing extends Product {
-    
+    /**
+     * clothing object class with attributes setters, getters, empty and loaded constructors
+     */
     private String Measurement;
 
     public Clothing() {

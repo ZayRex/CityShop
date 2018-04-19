@@ -116,14 +116,20 @@ public class MainMenu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * goes to customer login page
+ * @param evt 
+ */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         CustomerLogin rForm = new CustomerLogin();
         this.dispose();
         rForm.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
-
+/**
+ * goes to view products page
+ * @param evt 
+ */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
             Customer unregisteredCustomer = new Customer();
@@ -133,7 +139,10 @@ public class MainMenu extends javax.swing.JFrame {
         this.dispose();
         rForm.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
-
+/**
+ * goes to staff login page
+ * @param evt 
+ */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         StaffLogin rForm = new StaffLogin();

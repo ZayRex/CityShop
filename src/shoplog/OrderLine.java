@@ -10,6 +10,9 @@ package shoplog;
  * @author Mohamad Harah
  */
 public class OrderLine {
+    /**
+     * Order line object class with attributes setters, getters, empty and loaded constructors
+     */
     private int OrderLineId;
     private int Quantity;
     private double LineTotal;

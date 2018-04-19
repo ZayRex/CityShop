@@ -14,7 +14,9 @@ import java.util.Map;
  * @author Mohamad Harah
  */
 public class Customer extends User {
-    
+    /**
+     * Customer object class with attributes setters, getters, empty and loaded constructors
+     */
     private String addressLine1;
     private String addressLine2;
     private String town;
@@ -86,7 +88,11 @@ public class Customer extends User {
     public void setIsRegistered(boolean isRegistered) {
         this.isRegistered = isRegistered;
     }
-    
+    /**
+     * adds new order
+     * @param newOrder
+     * @throws SQLException 
+     */
     public void addOrder (Order newOrder) throws SQLException
     {
         int id = newOrder.getOrderId();
@@ -101,6 +107,10 @@ public class Customer extends User {
         }
         
     }
+    /**
+     * loops though all complete orders
+     * @return hashmap of all complete orders
+     */
     public HashMap<Integer, Order> findAllCompleteOrders()
     {
         HashMap<Integer, Order> completeOrders = new HashMap<Integer, Order>();
@@ -115,6 +125,11 @@ public class Customer extends User {
         }
         return completeOrders;
     }
+    /**
+     * finds latest order
+     * @return the last order
+     * @throws SQLException 
+     */
     public Order findLatestOrder() throws SQLException 
     {
         Order lastOrder = new Order();

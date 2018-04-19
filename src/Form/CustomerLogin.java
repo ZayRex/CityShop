@@ -159,14 +159,20 @@ public class CustomerLogin extends javax.swing.JFrame {
     private void txtCustomerUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCustomerUsernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCustomerUsernameActionPerformed
-
+/**
+ * goes to the register page
+ * @param evt 
+ */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         RegisterNewCustomer rForm = new RegisterNewCustomer();
             this.dispose();
             rForm.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
-
+/**
+ * takes the information in fields to log into the system
+ * @param evt 
+ */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         
@@ -190,7 +196,10 @@ public class CustomerLogin extends javax.swing.JFrame {
            lblMessage.setText("Invalid Login");
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
+/**
+ * returns to the main menu
+ * @param evt 
+ */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         MainMenu rForm = new MainMenu();

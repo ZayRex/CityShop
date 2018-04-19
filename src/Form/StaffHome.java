@@ -117,21 +117,30 @@ public class StaffHome extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * logs out of the system and goes back to main menu
+ * @param evt 
+ */
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         MainMenu mainMenu = new MainMenu();
         this.dispose();
         mainMenu.setVisible(true);
     }//GEN-LAST:event_btnLogoutActionPerformed
-
+/**
+ * goes to modify products page
+ * @param evt 
+ */
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
         // TODO add your handling code here:
         StaffViewProduct rForm = new StaffViewProduct(loggedInStaff);
             this.dispose();
             rForm.setVisible(true);
     }//GEN-LAST:event_btnModifyActionPerformed
-
+/**
+ * goes to view products page
+ * @param evt 
+ */
     private void btnViewOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrdersActionPerformed
         // TODO add your handling code here:
         StaffViewOrders stfOrders;

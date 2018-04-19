@@ -25,7 +25,7 @@ public class StaffViewOrderLines extends javax.swing.JFrame {
     private Staff loggedInStaff;
     
     /**
-     * Creates new form AdminOrderLines
+     * Creates new order lines form for staff
      */
     public StaffViewOrderLines(Staff staff, Order order) {
         loggedInStaff = staff;
@@ -102,7 +102,10 @@ public class StaffViewOrderLines extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * back to view orders page
+ * @param evt 
+ */
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         StaffViewOrders stfOrders;
         try {

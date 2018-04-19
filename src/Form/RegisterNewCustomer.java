@@ -265,14 +265,20 @@ public class RegisterNewCustomer extends javax.swing.JFrame {
     private void txtPostCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPostCodeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPostCodeActionPerformed
-
+/**
+ * goes back to the customer login page
+ * @param evt 
+ */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         CustomerLogin rForm = new CustomerLogin();
             this.dispose();
             rForm.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
-
+/**
+ * submits customer information to register them into the system
+ * @param evt 
+ */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //register form 
@@ -320,7 +326,10 @@ public class RegisterNewCustomer extends javax.swing.JFrame {
     private void txtUserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtUserNameActionPerformed
-
+/**
+ * clear all the fields
+ * @param evt 
+ */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
          txtPassword.setText("");

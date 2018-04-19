@@ -199,14 +199,20 @@ public class StaffViewProduct extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * returns to staff home 
+ * @param evt 
+ */
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         StaffHome rForm = new StaffHome(loggedInStaff);
             this.dispose();
             rForm.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
-
+/**
+ * goes to edit product page
+ * @param evt 
+ */
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
         // TODO add your handling code here:
         
@@ -222,14 +228,20 @@ public class StaffViewProduct extends javax.swing.JFrame {
             lblMessage.setText("Please First Select a product");
         }
     }//GEN-LAST:event_btnEditActionPerformed
-
+/**
+ * goes to add product page
+ * @param evt 
+ */
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
         AddProduct rForm = new AddProduct(loggedInStaff);
             this.dispose();
             rForm.setVisible(true);
     }//GEN-LAST:event_btnAddActionPerformed
-
+/**
+ * list products of the selected category
+ * @param evt 
+ */
     private void lstProductValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstProductValueChanged
         // TODO add your handling code here:
          if(lstProduct.getSelectedIndex() != -1)
@@ -238,7 +250,10 @@ public class StaffViewProduct extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_lstProductValueChanged
-
+/**
+ * deletes selected product
+ * @param evt 
+ */
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         if(lstProduct.getSelectedIndex() != -1)
@@ -270,7 +285,10 @@ public class StaffViewProduct extends javax.swing.JFrame {
             lblMessage.setText("Please First Select A Product");
         }
     }//GEN-LAST:event_btnDeleteActionPerformed
-
+/**
+ * list the categories of products
+ * @param evt 
+ */
     private void lstCategValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstCategValueChanged
         // TODO add your handling code here:
         DefaultListModel model = new DefaultListModel();

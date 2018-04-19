@@ -275,14 +275,20 @@ public class EditCustomerDetails extends javax.swing.JFrame {
     private void txtPostCodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPostCodeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPostCodeActionPerformed
-
+/**
+ * returns to customer home
+ * @param evt 
+ */
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
       CustomerHome cHome = new CustomerHome(loggedInCustomer);
         this.dispose();
         cHome.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
-
+/**
+ * clear any unsaved changes
+ * @param evt 
+ */
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         txtPassword.setText(loggedInCustomer.getPassword());
@@ -293,7 +299,10 @@ public class EditCustomerDetails extends javax.swing.JFrame {
         txtTown.setText(loggedInCustomer.getTown());
         txtPostCode.setText(loggedInCustomer.getPostCode());
     }//GEN-LAST:event_btnClearActionPerformed
-
+/**
+ * takes the information in the fields to edit customers details
+ * @param evt 
+ */
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         if(!txtPassword.getText().isEmpty() && !txtFirstname.getText().isEmpty() &&

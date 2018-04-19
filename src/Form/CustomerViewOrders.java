@@ -24,7 +24,7 @@ public class CustomerViewOrders extends javax.swing.JFrame {
     private Customer loggedInCustomer;
 
     /**
-     * Creates new form ZooKeeperOrders
+     * Creates new form order form for customer
      */
     public CustomerViewOrders(Customer c) {
         try {
@@ -129,13 +129,19 @@ public class CustomerViewOrders extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * goes back to customers home
+ * @param evt 
+ */
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         CustomerHome cHome = new CustomerHome(loggedInCustomer);
         this.dispose();
         cHome.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
-
+/**
+ * view selected order details
+ * @param evt 
+ */
     private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
         if(tblOrders.getSelectedRow() == -1)
         {

@@ -146,35 +146,50 @@ private Customer loggedInCustomer;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * logs out and goes to the main menu
+ * @param evt 
+ */
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         MainMenu mainMenu = new MainMenu();
         this.dispose();
         mainMenu.setVisible(true);
     }//GEN-LAST:event_btnLogoutActionPerformed
-
+/**
+ * goes to browser products page
+ * @param evt 
+ */
     private void btnBrowserProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrowserProductsActionPerformed
         // TODO add your handling code here:
         ViewProducts rForm = new ViewProducts(loggedInCustomer);
         this.dispose();
         rForm.setVisible(true);
     }//GEN-LAST:event_btnBrowserProductsActionPerformed
-
+/**
+ * goes to edit details page
+ * @param evt 
+ */
     private void btnEditDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDetailsActionPerformed
         // TODO add your handling code here:
         EditCustomerDetails rForm = new EditCustomerDetails(loggedInCustomer);
         this.dispose();
         rForm.setVisible(true);
     }//GEN-LAST:event_btnEditDetailsActionPerformed
-
+/**
+ * goes to view my order page
+ * @param evt 
+ */
     private void btnViewOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrdersActionPerformed
         // TODO add your handling code here:
         CustomerViewOrders viewO = new CustomerViewOrders(loggedInCustomer);
         this.dispose();
         viewO.setVisible(true);
     }//GEN-LAST:event_btnViewOrdersActionPerformed
-
+/**
+ * unregisters from the shop and goes to the main menu
+ * @param evt 
+ */
     private void btnUnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnregisterActionPerformed
         // TODO add your handling code here:
         DBHandler db = new DBHandler();

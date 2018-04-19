@@ -140,14 +140,20 @@ public class StaffLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * returns to main menu
+ * @param evt 
+ */
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         MainMenu rForm = new MainMenu();
             this.dispose();
             rForm.setVisible(true);
     }//GEN-LAST:event_btnBackActionPerformed
-
+/**
+ * takes the username and password to log the staff in system
+ * @param evt 
+ */
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
         Staff stf = new Staff();

@@ -22,7 +22,7 @@ public class CustomerViewOrderLines extends javax.swing.JFrame {
     private Customer loggedInCustomer;
 
     /**
-     * Creates new form ZooKeeperOrderLines
+     * Creates new form order line form
      */
     public CustomerViewOrderLines(Customer c, int orderIdIn) {
         loggedInCustomer = c;
@@ -101,7 +101,10 @@ public class CustomerViewOrderLines extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * goes back to view orders
+ * @param evt 
+ */
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
        CustomerViewOrders cOrders = new CustomerViewOrders(loggedInCustomer);
        this.dispose();

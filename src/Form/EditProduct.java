@@ -198,7 +198,10 @@ public class EditProduct extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * submits the edited product details
+ * @param evt 
+ */
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
         if(!txtName.getText().isEmpty() && !txtPrice.getText().isEmpty() &&
@@ -271,14 +274,20 @@ public class EditProduct extends javax.swing.JFrame {
             lblMessage.setText("Please Complete All Fields");
         }
     }//GEN-LAST:event_btnSubmitActionPerformed
-
+/**
+ * goes back to previous page
+ * @param evt 
+ */
     private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
         // TODO add your handling code here:
         StaffViewProduct rForm = new StaffViewProduct(loggedInStaff);
             this.dispose();
             rForm.setVisible(true);
     }//GEN-LAST:event_btnReturnActionPerformed
-
+/**
+ * clear changed changes
+ * @param evt 
+ */
     private void btnClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearActionPerformed
         // TODO add your handling code here:
         txtId.setText(String.valueOf(selectedProduct.getProductId()));
