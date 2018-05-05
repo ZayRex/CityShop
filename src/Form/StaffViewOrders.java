@@ -144,12 +144,14 @@ public class StaffViewOrders extends javax.swing.JFrame {
  * @param evt 
  */
     private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
+        // if no order selected return error message
         if(tblOrders.getSelectedRow() == -1)
         {
             lblMessage.setText("No Order Selected");
         }
         else
         {
+            //view all customers previous orders details
             DefaultTableModel model = (DefaultTableModel)tblOrders.getModel();
 
             String customerId = String.valueOf(model.getValueAt(tblOrders.getSelectedRow(),0));

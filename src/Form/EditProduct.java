@@ -230,7 +230,7 @@ public class EditProduct extends javax.swing.JFrame {
                 lblMessage.setText("Error: price not in Correct Format");
                 return;
             }
-
+            // checks if the selected product is clothing or footwear to update the suitable fields in the database 
             if(selectedProduct.getClass().getName().equals("shoplog.Clothing"))
             {
                 String measurement = txtAdditional.getText();
@@ -247,6 +247,7 @@ public class EditProduct extends javax.swing.JFrame {
             }
             else
             {
+                // display error if the size entered is not in the correct format
                 int size;
                 try
                 {
@@ -279,7 +280,7 @@ public class EditProduct extends javax.swing.JFrame {
  * @param evt 
  */
     private void btnReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReturnActionPerformed
-        // TODO add your handling code here:
+        
         StaffViewProduct rForm = new StaffViewProduct(loggedInStaff);
             this.dispose();
             rForm.setVisible(true);

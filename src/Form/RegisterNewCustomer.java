@@ -280,9 +280,9 @@ public class RegisterNewCustomer extends javax.swing.JFrame {
  * @param evt 
  */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        //register form 
         
+        //register form 
+        // checks if the fields are empty and if they are display an error message
          if(txtUserName.getText().isEmpty() ||txtPassword.getText().isEmpty() || txtFirstName.getText().isEmpty() || txtLastName.getText().isEmpty() ||
                  txtAddressLine1.getText().isEmpty() || txtAddressLine2.getText().isEmpty() || txtTown.getText().isEmpty() || txtPostCode.getText().isEmpty()) 
          {
@@ -332,7 +332,7 @@ public class RegisterNewCustomer extends javax.swing.JFrame {
  */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         txtPassword.setText("");
+        txtPassword.setText("");
         txtFirstName.setText("");
         txtLastName.setText("");
         txtAddressLine1.setText("");

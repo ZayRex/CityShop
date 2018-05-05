@@ -278,7 +278,8 @@ public class AddProduct extends javax.swing.JFrame {
  * @param evt 
  */
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        // TODO add your handling code here:
+        
+        //checks if the form fields are empty or not and return error message if they are.
         if(!txtProductName.getText().isEmpty() && !txtProductPrice.getText().isEmpty() && 
                 !txtStocklvl.getText().isEmpty() && !txtAdditional.getText().isEmpty())
         {
@@ -290,6 +291,7 @@ public class AddProduct extends javax.swing.JFrame {
             {
                 stockLvl = Integer.parseInt(txtStocklvl.getText());
             }
+            //return error message if the user enters incorrect format for stock level
             catch(Exception ex)
             {
                 lblMessage.setText("Error: Stock Level not in Correct Format");
@@ -300,12 +302,13 @@ public class AddProduct extends javax.swing.JFrame {
             {
                 price = Double.parseDouble(txtProductPrice.getText());                        
             }
+            //return error if the user enters incorrect price format
             catch(Exception ex)
             {
                 lblMessage.setText("Error: Price is not in Correct Format");
                 return;
             }
-            
+            // if the clothing select button is selected then add clothing to database
             if(rdnClothing.isSelected())
             {
                 String measurement = txtAdditional.getText();
@@ -314,6 +317,7 @@ public class AddProduct extends javax.swing.JFrame {
                 db.addProduct(newClothing);
                 lblMessage.setText("New Clothing added successfully");
             }
+            // if the footwear button is selected add footwear to the database
             else if(rdnFootwear.isSelected())
             {
                 int size;

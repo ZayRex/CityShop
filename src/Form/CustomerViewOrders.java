@@ -143,10 +143,12 @@ public class CustomerViewOrders extends javax.swing.JFrame {
  * @param evt 
  */
     private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
+        // if no order is selected return error message
         if(tblOrders.getSelectedRow() == -1)
         {
             lblMessage.setText("No Order Selected");
         }
+        // get list of orderlines
         else
         {
             DefaultTableModel model = (DefaultTableModel)tblOrders.getModel();

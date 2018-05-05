@@ -191,7 +191,7 @@ private Customer loggedInCustomer;
  * @param evt 
  */
     private void btnUnregisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnregisterActionPerformed
-        // TODO add your handling code here:
+
         DBHandler db = new DBHandler();
         db.deleteCustomer(loggedInCustomer);
         

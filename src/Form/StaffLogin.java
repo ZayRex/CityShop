@@ -155,7 +155,7 @@ public class StaffLogin extends javax.swing.JFrame {
  * @param evt 
  */
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
+        //commented above
         Staff stf = new Staff();
         String username = txtStaffUsername.getText();
         String pass = txtStaffPassword.getText();

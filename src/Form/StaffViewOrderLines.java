@@ -25,7 +25,7 @@ public class StaffViewOrderLines extends javax.swing.JFrame {
     private Staff loggedInStaff;
     
     /**
-     * Creates new order lines form for staff
+     * Creates new order lines form for staff to display customers all previous order details
      */
     public StaffViewOrderLines(Staff staff, Order order) {
         loggedInStaff = staff;

@@ -280,8 +280,8 @@ public class ViewProducts extends javax.swing.JFrame {
   if(lstProduct.getSelectedIndex() != -1)
         {
       try {
-          //txtMessage.setText("");
           
+          //  set the amount of products in current order to be the same amount from the last order 
           cmbQuantity.removeAllItems();
           Product selectedProduct = (Product)lstProduct.getSelectedValue();
           int amountInCurrentOrder = loggedInCustomer.findLatestOrder().getQuantityofProduct(selectedProduct.getProductId());
@@ -307,22 +307,25 @@ public class ViewProducts extends javax.swing.JFrame {
  * @param evt 
  */
     private void btnAddtoBasketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddtoBasketActionPerformed
-       if(lstProduct.getSelectedIndex() != -1)
-        {           
+      // checks if a product is selected and if not display error message
+        if(lstProduct.getSelectedIndex() != -1)
+        {    // checks if the customer is registered       
             if(loggedInCustomer.getIsRegistered())
             {
-                
+                // set the max quantity that can be ordered as same as the stock level
                 quantity = Integer.parseInt((String)cmbQuantity.getSelectedItem());
+                // check that a minimum quantity of 1 is selected
                 if (quantity>0)
                 {
                    OrderLine newOrderLine;
                 try {
                     Order o = loggedInCustomer.findLatestOrder();
-                
+                //adds an order line to the latest order
                    Product selectedProduct = (Product)lstProduct.getSelectedValue();
                     newOrderLine = new OrderLine(loggedInCustomer.findLatestOrder(), selectedProduct, this.quantity);
                     loggedInCustomer.findLatestOrder().addOrderLine(newOrderLine);
                     lblMessage.setText("Added to Order");
+                    //decrease the stock level by the ordered amount
                     int amountAvailable = selectedProduct.getStockLevel() - quantity;
              lblStock.setText(Integer.toString(amountAvailable)); 
 
@@ -363,11 +366,11 @@ public class ViewProducts extends javax.swing.JFrame {
  * @param evt 
  */
     private void lstCategValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstCategValueChanged
-        // TODO add your handling code here:
+  
         DefaultListModel model = new DefaultListModel();
         
         lstProduct.clearSelection();
-                
+           // loop through products and display categories     
         for(Map.Entry<Integer, Product> productEntry : products.entrySet())
         {
             Product actualProduct = productEntry.getValue();
@@ -387,7 +390,7 @@ public class ViewProducts extends javax.swing.JFrame {
  */
     private void btnViewOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrdersActionPerformed
         try {
-            // TODO add your handling code here:
+            
             
             ViewBasket myBasket = new ViewBasket(loggedInCustomer);
             this.dispose();

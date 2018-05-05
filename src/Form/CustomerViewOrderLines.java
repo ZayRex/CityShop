@@ -28,7 +28,7 @@ public class CustomerViewOrderLines extends javax.swing.JFrame {
         loggedInCustomer = c;
         Order order = loggedInCustomer.getOrders().get(orderIdIn);
         initComponents();
-        
+        //create table to show order details / orderLines
         tblOrderLines.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         
         DefaultTableModel model = (DefaultTableModel)tblOrderLines.getModel();

@@ -304,11 +304,12 @@ public class EditCustomerDetails extends javax.swing.JFrame {
  * @param evt 
  */
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
-        // TODO add your handling code here:
+        // check if the fields are not empty and if they are return error message
         if(!txtPassword.getText().isEmpty() && !txtFirstname.getText().isEmpty() &&
             !txtLastname.getText().isEmpty() && !txtAddressNum.getText().isEmpty() &&
             !txtStreet.getText().isEmpty() && !txtTown.getText().isEmpty() && !txtPostCode.getText().isEmpty())
         {
+            //takes the information in the fields to edit customers details
             String password = txtPassword.getText();
             String firstName = txtFirstname.getText();
             String lastName = txtLastname.getText();

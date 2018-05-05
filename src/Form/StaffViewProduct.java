@@ -255,7 +255,7 @@ public class StaffViewProduct extends javax.swing.JFrame {
  * @param evt 
  */
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        // TODO add your handling code here:
+        // checks if a product is selected and if not return error message
         if(lstProduct.getSelectedIndex() != -1)
         {
             Product selectedProduct = (Product)lstProduct.getSelectedValue();
@@ -266,7 +266,7 @@ public class StaffViewProduct extends javax.swing.JFrame {
             products = db.loadProducts();
             DefaultListModel model = new DefaultListModel();
         
-        
+            //loop through products and delete the selected one
             for(Map.Entry<Integer, Product> productEntry : products.entrySet())
             {
                 Product product = productEntry.getValue();
@@ -290,11 +290,11 @@ public class StaffViewProduct extends javax.swing.JFrame {
  * @param evt 
  */
     private void lstCategValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_lstCategValueChanged
-        // TODO add your handling code here:
+        
         DefaultListModel model = new DefaultListModel();
         
         lstProduct.clearSelection();
-                
+        // loop through products and display products categories        
         for(Map.Entry<Integer, Product> productEntry : products.entrySet())
         {
             Product actualProduct = productEntry.getValue();

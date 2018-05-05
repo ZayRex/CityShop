@@ -176,12 +176,14 @@ public class ViewBasket extends javax.swing.JFrame {
    * @param evt 
    */
     private void btnRemoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoveActionPerformed
+        // checks if a product is selected and if not display an error message
         if(tblOrderLines.getSelectedRow() == -1)
         {
             lblMessage.setText("No Product Selected");
         }
         else
         {
+            // checks if the product exist to remove it
             try {
             DefaultTableModel model = (DefaultTableModel)tblOrderLines.getModel();
             int productId = Integer.parseInt(String.valueOf(model.getValueAt(tblOrderLines.getSelectedRow(),0)));
@@ -216,6 +218,7 @@ public class ViewBasket extends javax.swing.JFrame {
         DBHandler db = new DBHandler();
         
         try {
+            // find the latest order and decrease the stock level by the last order quantity
             for(Map.Entry<Integer, OrderLine> olEntry :
                     loggedInCustomer.findLatestOrder().getOrderLines().entrySet())
             {
@@ -224,14 +227,14 @@ public class ViewBasket extends javax.swing.JFrame {
                 db.updateProduct(orderedProduct);
             }
         
-        
+        // sets the latset order status to complete and goes to the confirmation screen
         loggedInCustomer.findLatestOrder().setStatus("Complete");
         db.completeOrder(orderId);
         JOptionPane.showMessageDialog(null,"Order Completed!");
         CustomerHome ch = new CustomerHome(loggedInCustomer);
         this.dispose();
         ch.setVisible(true);
-        //System.out.println("order complete");
+        
         } catch (SQLException ex) {
             Logger.getLogger(ViewBasket.class.getName()).log(Level.SEVERE, null, ex);
         }
